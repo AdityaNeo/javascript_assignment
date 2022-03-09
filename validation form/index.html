@@ -9,22 +9,94 @@
     .container {
       margin:50px 50px 50px 50px;
     }
+    input[type="text"]
+    {
+      width: 32vw;
+height: 4vh;
+    }
+
+    input[type="password"]
+    {
+      width: 32vw;
+height: 4vh;
+    }
+
+    button{
+      background-color: #bed3ce;
+      color: black;
+      height: 9vh;
+      width: 10vw;
+      border-radius: 5vh;
+      display: block;
+      margin:0 auto;
+    }
+    table {
+      width:100%;
+    }
+
+    th:nth-child(n+1)
+    {
+      background-color: yellow;
+    }
+    th:first-child{
+      background-color: orange;
+    }
+    th:last-child {
+      background-color: tomato;
+    }
+
+    td{
+      text-align: center;
+      font-size: 17px;
+      color: green;
+      padding-inline: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #d6e1af;
+
+    }
+    tr:nth-child(odd)
+    {
+      background-color: #9dd1ed;
+    }
+
+    td:first-child {
+      font-size: 30px;
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
+    <h1>Validation Form</h1>
     <form>
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" placeholder="Enter first name" onfocusout="ftest()" required> <br>
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" placeholder="Enter last name" onfocusout="ltest()" required> <br>
-      <label for="phno">Phone NUmber</label>
-      <input type="text" id="phno" placeholder="Enter phonenumber" onfocusout="ptest()" required> <br>
-      <label for="age">Age</label>
-      <input type="text" id="age" placeholder="Enter age" onfocusout="atest()" required> <br>
-      <label for="income">income</label>
-      <input type="text" id="income" placeholder="Enter income" onfocusout="itest()" required> <br>
-      <button onclick="final()">Submit</button>
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="fname">First Name</label></td>
+            <td>  <input type="text" id="fname" placeholder="Enter first name" onsubmit="ftest()" required></td>
+          </tr>
+          <tr>
+            <td>  <label for="lname">Last Name</label></td>
+            <td> <input type="text" id="lname" placeholder="Enter last name" onsubmit="ltest()" required></td>
+          </tr>
+          <tr>
+            <td><label for="phno">Phone NUmber</label></td>
+            <td><input type="text" id="phno" placeholder="Enter phonenumber" onsubmit="ptest()" required></td>
+          </tr>
+          <tr>
+            <td><label for="age">Age</label></td>
+            <td><input type="text" id="age" placeholder="Enter age" onsubmit="atest()" required></td>
+          </tr>
+          <tr>
+            <td>  <label for="income">income</label></td>
+            <td><input type="text" id="income" placeholder="Enter income" onsubmit="itest()" required></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+          <button onclick="final()">Submit</button>
       </form>
   </div>
 <script type="text/javascript">
@@ -54,7 +126,7 @@
     return true;
   }
   else{
-    alert("First-Name You have to use only a-z charachter");
+    alert("Last-Name You have to use only a-z charachter");
     document.getElementById("lname").value='';
     return false;
   }
