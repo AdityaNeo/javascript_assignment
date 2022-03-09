@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .container {
+      margin:50px 50px 50px 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" placeholder="Enter first name" onfocusout="ftest()" required> <br>
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" placeholder="Enter last name" onfocusout="ltest()" required> <br>
+      <label for="phno">Phone NUmber</label>
+      <input type="text" id="phno" placeholder="Enter phonenumber" onfocusout="ptest()" required> <br>
+      <label for="age">Age</label>
+      <input type="text" id="age" placeholder="Enter age" onfocusout="atest()" required> <br>
+      <label for="income">income</label>
+      <input type="text" id="income" placeholder="Enter income" onfocusout="itest()" required> <br>
+      <button onclick="final()">Submit</button>
+      </form>
+  </div>
+<script type="text/javascript">
+  var nameRegex=/^[a-zA-Z]{2,50}$/;
+  var phoneRegex=/^[0-9]{10}$/;
+  var ageRegex=/^100|[1-9]?\d$/;
+
+  function ftest()
+  {
+  let target=document.getElementById("fname").value;
+  if(nameRegex.test(target))
+  {
+     return true;
+  }
+  else{
+    alert("First-Name You have to use only a-z charachter");
+    document.getElementById("fname").value='';
+    return false;
+  }
+  }
+
+  function ltest()
+  {
+  let target=document.getElementById("lname").value;
+  if(nameRegex.test(target))
+  {
+    return true;
+  }
+  else{
+    alert("First-Name You have to use only a-z charachter");
+    document.getElementById("lname").value='';
+    return false;
+  }
+  }
+
+  function ptest()
+  {
+  let target=document.getElementById("phno").value;
+  if(phoneRegex.test(target))
+  {
+     return true;
+  }
+  else{
+    alert("phone number You have to use only 0-9 digits ");
+    document.getElementById("phno").value='';
+    return false;
+  }
+  }
+
+  function atest()
+  {
+  let target=document.getElementById("age").value;
+  if(18 < Number(target))
+  {
+     return true;
+  }
+  else{
+    alert("age You have to use only 0-9 digits above 18 years ");
+    document.getElementById("age").value='';
+    return false;
+  }
+  }
+
+  function itest()
+  {
+  let target=document.getElementById("income").value;
+  if(20000 < Number(target))
+  {
+     return true;
+  }
+  else{
+    alert("income more than 20,000 ");
+    document.getElementById("income").value='';
+    return false;
+  }
+  }
+
+  function final()
+  {
+    if(ftest() && ltest() && ptest() &&itest() && atest())
+    {
+      alert("form is submitted sucessfully");
+    }
+  }
+</script>
+</body>
+</html>
